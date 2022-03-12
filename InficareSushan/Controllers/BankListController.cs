@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using InficareSushan.Models;
 using InficareSushan.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,6 +22,7 @@ namespace InficareSushan.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task< ActionResult<IEnumerable<BankList>>> GetBankList()
         {
             try
