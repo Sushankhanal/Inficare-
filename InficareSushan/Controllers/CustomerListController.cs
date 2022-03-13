@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InficareSushan.Controllers
 {
+ [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CustomerListController : ControllerBase
@@ -22,7 +23,7 @@ namespace InficareSushan.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        
         public async Task<ActionResult<IEnumerable<CustomerList>>> GetCustomerList()
         {
             try
